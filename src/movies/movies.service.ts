@@ -12,6 +12,7 @@ export class MoviesService {
     }
 
     getOne(id:number):Movie {
+        console.log(id)
         const movie =  this.movies.find(movie => movie.id === id) // "+"는 string을 number로 변환
         if(!movie) {
             throw new NotFoundException(`Movie with ID: ${id} not found`) // nestjs 내장 예외처리 메소드
